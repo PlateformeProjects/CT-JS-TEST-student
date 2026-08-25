@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Panier de Livres - Exercice de Tests</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo">
+        <svg class="icon-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <h1>Le Panier de Livres</h1>
+      </div>
+      <span class="badge-environment">Environnement d'Exercice</span>
+    </div>
+  </header>
+
+  <main class="app-main container">
+    <section class="catalog-section">
+      <h2 class="section-title">Catalogue de Livres</h2>
+      <div id="products-container" class="products-grid">
+        <!-- Rendu dynamique par dom-cart.js -->
+        <p class="loading-message">Chargement du catalogue...</p>
+      </div>
+    </section>
+
+    <aside class="cart-section">
+      <h2 class="section-title">
+        <svg class="icon-cart-title" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        Votre Panier
+      </h2>
+      <div id="cart-container" class="cart-box">
+        <!-- Rendu dynamique par dom-cart.js -->
+        <p class="empty-cart-message">Votre panier est vide.</p>
+      </div>
+
+      <div class="promo-box">
+        <label for="promo-code" class="form-label">Code Promotionnel</label>
+        <div class="promo-input-group">
+          <input type="text" id="promo-code" placeholder="Ex: LIVRE10" aria-label="Code promo">
+          <button id="btn-apply-promo" class="btn btn-secondary">Appliquer</button>
+        </div>
+        <p id="promo-message" class="promo-message-text"></p>
+      </div>
+
+      <button id="btn-checkout" class="btn btn-primary btn-block">
+        Finaliser la commande
+      </button>
+    </aside>
+  </main>
+
+  <!-- Modal de confirmation de commande -->
+  <div id="checkout-modal" class="modal-overlay hidden" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-status-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3>Commande validée</h3>
+      </div>
+      <div class="modal-body">
+        <p>Merci pour votre achat ! Votre commande a été traitée avec succès.</p>
+        <p class="order-details">ID Commande: <span id="order-id"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-close-modal" class="btn btn-primary">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="container text-center">
+      <p>Projet pédagogique pour la formation aux tests JS. Jest et Cypress.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Introduction a Jest", "price": 19.99 },
+  { "id": 2, "title": "Cypress pour le E2E", "price": 24.99 },
+  { "id": 3, "title": "JavaScript Moderne ES6+", "price": 14.50 },
+  { "id": 4, "title": "Clean Code en JS", "price": 29.99 }
+]
